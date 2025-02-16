@@ -4,7 +4,7 @@ import pandas as pd
 from sanitizer import sanitize_excel
 
 # Dummy user credentials
-USER_CREDENTIALS = {"admin": "adminpw"}
+USER_CREDENTIALS = {"admin": "adminpw", "sanju": "sanjupw"}
 
 # Initialize session state
 if "logged_in" not in st.session_state:
@@ -40,6 +40,7 @@ def add_footer():
 
 def login_page():
     """Centered and clean login form"""
+    st.set_page_config(page_title="MediXpert Login")
     st.markdown(
         """
         <style>
@@ -106,6 +107,7 @@ def login_page():
 
 def reports_sanitizer():
     """Reports Sanitizer Page"""
+    st.set_page_config(page_title="Welcome to MediXpert")
     st.markdown("<h1 style='text-align: center; color: #007bff;'>Ledger Reports Sanitizer</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'>Upload and sanitize your reports easily.</p>", unsafe_allow_html=True)
     if st.button("Logout"):

@@ -139,11 +139,11 @@ def save_with_auto_fit(df, output_file):
 
 
 def check_create_dir(dir_name):
+    if not os.path.exists(dir_name):
+        os.mkdir(dir_name)
     if os.listdir(dir_name):
         files = [f for f in os.listdir(dir_name) if os.path.isfile(os.path.join(dir_name, f))]
         for file in files:
             file_path = os.path.join(dir_name, file)
             os.remove(file_path)
             print(f"Deleted file: {file_path}")
-    elif not os.path.exists(dir_name):
-        os.mkdir(dir_name)
