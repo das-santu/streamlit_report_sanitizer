@@ -11,6 +11,14 @@ if "logged_in" not in st.session_state:
     st.session_state["logged_in"] = False
     st.session_state["username"] = ""
 
+# Hide Streamlit UI elements using CSS
+hide_st_style = """
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+        """
 
 def check_login(username, password):
     """Validate login credentials"""
@@ -41,6 +49,7 @@ def add_footer():
 def login_page():
     """Centered and clean login form"""
     st.set_page_config(page_title="MediXpert Login")
+    st.markdown(hide_st_style, unsafe_allow_html=True)
     st.markdown(
         """
         <style>
@@ -108,6 +117,7 @@ def login_page():
 def reports_sanitizer():
     """Reports Sanitizer Page"""
     st.set_page_config(page_title="Welcome to MediXpert")
+    st.markdown(hide_st_style, unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: center; color: #007bff;'>Ledger Reports Sanitizer</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'>Upload and sanitize your reports easily.</p>", unsafe_allow_html=True)
     if st.button("Logout"):
