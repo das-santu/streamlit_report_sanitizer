@@ -48,7 +48,7 @@ def add_footer():
 
 def login_page():
     """Centered and clean login form"""
-    st.set_page_config(page_title="MediXpert Login")
+    st.set_page_config(page_title="MediXpert Login", page_icon="favicon.ico", layout="centered")
     st.markdown(hide_st_style, unsafe_allow_html=True)
     st.markdown(
         """
@@ -116,7 +116,7 @@ def login_page():
 
 def reports_sanitizer():
     """Reports Sanitizer Page"""
-    st.set_page_config(page_title="Welcome to MediXpert")
+    st.set_page_config(page_title="Welcome to MediXpert", page_icon="favicon.ico", layout="centered")
     st.markdown(hide_st_style, unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: center; color: #007bff;'>Ledger Reports Sanitizer</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'>Upload and sanitize your reports easily.</p>", unsafe_allow_html=True)
